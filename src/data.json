@@ -1,0 +1,5 @@
+[
+    {"title":"Accueil", "link":"/"},
+    {"title":"Réservation", "link":"/reservation"},
+    {"title":"Liste des réservations", "link":"/reservationList"}
+]
