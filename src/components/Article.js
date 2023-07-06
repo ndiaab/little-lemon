@@ -3,9 +3,9 @@ const pizzas = require("../pizzas.json");
 const Article = () => {
   return (
     <>
-      {pizzas.map(pizza => {
+      {pizzas.map((pizza,index) => {
         return (
-          <article>
+          <article key={index} >
             <h2>{pizza.title}</h2>
             <br />
             <div className="simulationImage">{pizza.image}</div>

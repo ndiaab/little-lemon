@@ -4,7 +4,7 @@ const Footer = () => {
       <div>
         <img src="./Asset 20@4x.png" alt="" width="30px" />
       </div>
-      <div class="copyright">
+      <div className="copyright">
         <p>Copyright Little Lemon</p>
       </div>
     </footer>

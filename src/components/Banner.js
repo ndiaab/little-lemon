@@ -1,7 +1,7 @@
 const Banner = () => {
   return (
     <section>
-      <article class="offWeekend">
+      <article className="offWeekend">
         <h1>30% Off this weekend</h1>
         <br />
         <p>
