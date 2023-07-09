@@ -1,5 +1,5 @@
 [
-    {"title":"Accueil", "link":"/"},
-    {"title":"Réservation", "link":"/reservation"},
-    {"title":"Liste des réservations", "link":"/reservationList"}
+    {"title":"Welcome page", "link":"/"},
+    {"title":"Booking page", "link":"/reservation"},
+    {"title":"Booked list", "link":"/reservationList"}
 ]

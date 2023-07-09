@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import React, { useState} from "react";
+import React from "react";
 
 import { contextTable } from "../App";
 
@@ -10,27 +10,30 @@ export const BookingForm = (props) => {
 
     //https://raw.githubusercontent.com/Meta-Front-End-Developer-PC/capstone/master/api.js
 
-    const [resDate, setResDate] = useState(''),
-        [resTime, setResTime] = useState(''),
-        [guests, setGuests] = useState(0),
-        [occasion, setOccasion] = useState('');
+    const [resDate, setResDate] = React.useState(""),
+        [resTime, setResTime] = React.useState(""),
+        [guests, setGuests] = React.useState(0),
+        [occasion, setOccasion] = React.useState("");
 
-    const [error, setError] = useState(false);
-    const [submitted, setSubmitted] = useState(false);
+    const [error, setError] = React.useState(false);
+    const [submitted, setSubmitted] = React.useState(false);
 
     const errorMessage = "Erreur de saisie sur le formulaire";
     const submittedMessage = "Votre réservation a bien été prise en compte";
     const navigate = useNavigate();
 
+
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (resDate !== "" && resTime !== "" && guests > 0 && occasion != "") {
-            //dispatch(bookReservation({ name, surname, guestNumber }));
-            setTable([...mesTable, { resDate, resTime, guests, occasion }]);
-            setError(false);
-            //ConfirmedBooking
-            navigate("/test");
-            setSubmitted(true);
+        if (disableSubmit()) {
+            if (props.submitAPI({ resDate, resTime, guests, occasion })) {
+                //dispatch(bookReservation({ name, surname, guestNumber }));
+                setTable([...mesTable, { resDate, resTime, guests, occasion }]);
+                setError(false);
+                //ConfirmedBooking
+                setSubmitted(true);
+                navigate("/confirmation");
+            }
         } else {
             setError(true);
             setSubmitted(false);
@@ -38,14 +41,23 @@ export const BookingForm = (props) => {
     };
 
     const update = (value) => {
+        value == '' && setResTime('');
         setResDate(value);
         props.setAvailableTimes(value);
-    }
+    };
 
+    const disableSubmit = () => {
+        return resDate !== "" && resTime !== "" && guests > 0 && occasion != "";
+    };
+
+    const BookingSlot = (props) => {
+        return <option key={props.index}>{props.slot}</option>;
+    };
 
     //The options in the booking time field should be displayed from a list of available times. htmlFor now, create a stateful array in the component named availableTimes and use this state variable to populate the time select field options
     return (
         <div>
+            <h2>Form reservation</h2>
             <form
                 style={{
                     display: "grid",
@@ -61,15 +73,22 @@ export const BookingForm = (props) => {
                     type="date"
                     id="res-date"
                     value={resDate}
-                    onChange={(e) => {update(e.target.value)}}
+                    required="true"
+                    onChange={(e) => {
+                        update(e.target.value);
+                    }}
                 />
                 <label htmlFor="res-time">Choose time</label>
                 <select
                     id="res-time "
                     value={resTime}
+                    required="true"
                     onChange={(e) => setResTime(e.target.value)}
                 >
-                    {props.availableTimes.map((e,i) => <BookingSlot slot={e} index={i} />)}
+                    <BookingSlot slot="" index="0" />
+                    {props.availableTimes.map((e, i) => (
+                        <BookingSlot slot={e} index={i} />
+                    ))}
                 </select>
                 <label htmlFor="guests">Number of guests</label>
                 <input
@@ -79,12 +98,14 @@ export const BookingForm = (props) => {
                     max="10"
                     id="guests"
                     value={guests}
+                    required="true"
                     onChange={(e) => setGuests(e.target.value)}
                 />
                 <label htmlFor="occasion">Occasion</label>
                 <select
                     id="occasion"
                     value={occasion}
+                    required="true"
                     onChange={(e) => setOccasion(e.target.value)}
                 >
                     <option></option>
@@ -96,14 +117,12 @@ export const BookingForm = (props) => {
                     {submitted && submittedMessage}
                 </p>
 
-                <input type="submit" value="Make Your reservation" />
+                <input
+                    type="submit"
+                    value="Make Your reservation"
+                    disabled={!disableSubmit()}
+                />
             </form>
         </div>
     );
 };
-
-
-
-const BookingSlot = (props) => {
-    return <option key={props.index}>{props.slot}</option>;
-}

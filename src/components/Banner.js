@@ -1,18 +1,10 @@
+import slider from "../slider-1.png"
+
 const Banner = () => {
   return (
-    <section>
+    <section style={{ backgroundImage: `url(${slider})`, backgroundSize: 'cover'}}>
       <article className="offWeekend">
-        <h1>30% Off this weekend</h1>
-        <br />
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-          dignissimos odio quam laudantium ab sed ex quos quia deserunt
-          similique ad tempora aliquid nemo dicta recusandae nulla
-          exercitationem, sit eum! Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Adipisci dignissimos odio quam laudantium ab sed ex
-          quos quia deserunt similique ad tempora aliquid nemo dicta recusandae
-          nulla exercitationem, sit eum!
-        </p>
+        <h1>Vente à emporter du vendredi au dimanche et vente en livraison 7/7</h1>
       </article>
     </section>
   );

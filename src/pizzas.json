@@ -1,37 +1,51 @@
 [
     {
-        "title":"Calzone",
-        "image":"monImage",
-        "paragraphe": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dignissimos odio quam laudantium ab sed ex quos quia deserunt similique ad tempora aliquid nemo dicta recusandae nulla exercitationem, sit eum!"
+        "title":"4 Fromages",
+        "image":"../boursin.png",
+        "paragraphe": "Tomate, fromage, parmesan, gorgonzola, provolone",
+        "price":"pizzaprice1"
     },
     {
         "title":"Reine",
         "image":"monImage",
-        "paragraphe": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dignissimos odio quam laudantium ab sed ex quos quia deserunt similique ad tempora aliquid nemo dicta recusandae nulla exercitationem, sit eum!"
+        "paragraphe": "Crème fraîche, fromage, viande hachée, émincé de poulet, pommes de terre, boursin",
+        "price":"pizzaprice2"
     },
     {
-        "title":"Kebab",
+        "title":"Buffalo",
         "image":"monImage",
-        "paragraphe": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dignissimos odio quam laudantium ab sed ex quos quia deserunt similique ad tempora aliquid nemo dicta recusandae nulla exercitationem, sit eum!"
+        "paragraphe": "Sauce barbecue, fromage, viande hachée, oignons, poivrons",
+        "price":"pizzaprice2"
     },
     {
-        "title":"Raclette",
+        "title":"Burger",
         "image":"monImage",
-        "paragraphe": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dignissimos odio quam laudantium ab sed ex quos quia deserunt similique ad tempora aliquid nemo dicta recusandae nulla exercitationem, sit eum!"
+        "paragraphe": "Crème fraîche, fromage, viande hachée, cheddar, oignons, cornichons, ketchup",
+        "price":"pizzaprice2"
     },
     {
-        "title":"Pomme de terre",
+        "title":"Calzone",
         "image":"monImage",
-        "paragraphe": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dignissimos odio quam laudantium ab sed ex quos quia deserunt similique ad tempora aliquid nemo dicta recusandae nulla exercitationem, sit eum!"
+        "paragraphe": "Tomate, fromage, oeuf, au choix: jambon / thon / viande hachée",
+        "price":"calzone"
+    },
+    {
+        "title":"Campione",
+        "image":"monImage",
+        "paragraphe": "Tomate, fromage, viande hachée, oeuf, champignons",
+        "price":"calzone"
+
+    },
+    {
+        "title":"Ch’ti",
+        "image":"monImage",
+        "paragraphe": "Crème fraîche, fromage, émincé de poulet, maroilles",
+        "price":"pizzaprice2"
     },
     {
         "title":"Chèvre",
         "image":"monImage",
-        "paragraphe": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dignissimos odio quam laudantium ab sed ex quos quia deserunt similique ad tempora aliquid nemo dicta recusandae nulla exercitationem, sit eum!"
-    },
-    {
-        "title":"Michel",
-        "image":"monImage",
-        "paragraphe": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dignissimos odio quam laudantium ab sed ex quos quia deserunt similique ad tempora aliquid nemo dicta recusandae nulla exercitationem, sit eum!"
+        "paragraphe": "Crème fraîche, fromage, chèvre, olives",
+        "price":"pizzaprice2"
     }
 ]

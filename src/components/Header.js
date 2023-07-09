@@ -5,7 +5,7 @@ const Header = () => {
     <header>
       <nav>
         <ul>
-        {menu.map( (elm,index) => {return <Link to={elm.link}><li key={index}>{elm.title}</li></Link>})}
+        {menu.map( (elm,index) => {return <Link to={elm.link} key={`link${index}`}><li key={`li${index}`}>{elm.title}</li></Link>})}
         </ul>
       </nav>
     </header>

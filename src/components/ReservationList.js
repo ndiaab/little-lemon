@@ -5,9 +5,8 @@ export const ReservationList = () => {
     const { mesTable } = useContext(contextTable);
 
     const ras = (mesTable.length == 0
-        ? "Pas de réservation enregistré pour le moment"
+        ? "No reservation recorded"
         : "");
-        console.log(mesTable)
     return (
         <div>
             <p>{ras}</p>

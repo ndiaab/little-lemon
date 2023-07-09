@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import { ReservationList } from "./bookingTable/ReservationList";
+import { ReservationList } from "./components/ReservationList";
 import { BookingPage } from "./components/BookingPage";
 
 
@@ -9,6 +9,7 @@ import Header from "./components/Header";
 import Article from "./components/Article";
 import Banner from "./components/Banner";
 import Footer from "./components/Footer";
+import ConfirmedBooking from "./components/ConfirmedBooking"
 
 import './App.css';
 
@@ -33,7 +34,7 @@ function App() {
                         <Route path="/" exact element={<><Banner /><section><Article /></section><Footer /></>}/>
                         <Route path="/reservation" element={<BookingPage />} />
                         <Route path="/reservationList" element={<ReservationList />}/>
-                        <Route path="/test" element={<div>Félicitations</div>}/>
+                        <Route path="/confirmation" element={<ConfirmedBooking />}/>
                         
                     </Routes>
                 </div>
