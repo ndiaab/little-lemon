@@ -5,7 +5,7 @@ import { contextTable } from "../App";
 
 import { useContext } from "react";
 
-export const BookingForm = (props) => {
+const BookingForm = (props) => {
     const { mesTable, setTable } = useContext(contextTable);
 
     //https://raw.githubusercontent.com/Meta-Front-End-Developer-PC/capstone/master/api.js
@@ -126,3 +126,5 @@ export const BookingForm = (props) => {
         </div>
     );
 };
+
+export default BookingForm;

@@ -1,8 +1,8 @@
 import { useReducer, useState } from "react";
-import { BookingForm } from "./BookingForm";
+import BookingForm from "../components/BookingForm";
 import { fetchAPI, submitAPI } from "../api";
 
-const updateTimes = (state, format) => {
+export const updateTimes = (state, format) => {
     const date = new Date(format);
     let day = date.getDay();
     
@@ -24,10 +24,10 @@ const updateTimes = (state, format) => {
     return fetchAPI(date);
 };
 
-const initializeTimes = [];
+export const initializeTimes = [];
 //["","17:00","18:00","19:00","20:00","21:00","22:00"]
 
-export const BookingPage = () => {
+const BookingPage = () => {
     const [availableTimes, setAvailableTimes] = useReducer(
         updateTimes,
         initializeTimes
@@ -40,3 +40,5 @@ export const BookingPage = () => {
         />
     );
 };
+
+export default BookingPage;

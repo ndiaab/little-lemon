@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { contextTable } from "../App";
 
-export const ReservationList = () => {
+const ReservationList = () => {
     const { mesTable } = useContext(contextTable);
 
     const ras = (mesTable.length == 0
@@ -18,3 +18,5 @@ export const ReservationList = () => {
         </div>
     );
 };
+
+export default ReservationList;
